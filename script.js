@@ -102,6 +102,37 @@ const albums = [
             "Drake, Future - Plastic Bag.mp3",
             "Future - Jersey.mp3"
         ]
+    },
+    {
+        id: "ss4u",
+        title: "SS4U",
+        artist: "Various Artists",
+        mood: "Night Drive",
+        folder: "assets/music/SS4U/",
+        cover: "assets/music/SS4U/plaatj5.png",
+        tracks: [
+            "01 CN TOWER.mp3",
+            "02 MOTH BALLS.mp3",
+            "03 SOMETHING ABOUT YOU.mp3",
+            "04 GLORIOUS.mp3",
+            "05 OMW.mp3",
+            "06 CELIBACY.mp3",
+            "07 SOMEBODY LOVES ME.mp3",
+            "08 DIE TRYING.mp3",
+            "09 NOKIA.mp3",
+            "10 MEET YOUR PADRE.mp3",
+            "11 LASERS.mp3",
+            "12 RAINING IN HOUSTON.mp3",
+            "13 GIMME A HUG.mp3",
+            "14 BRIAN STEEL.mp3",
+            "15 PIMMIE'S DILEMMA.mp3",
+            "16 SMALL TOWN FAME.mp3",
+            "17 DEEPER.mp3",
+            "18 SPIDER-MAN SUPERMAN.mp3",
+            "19 CRYING IN CHANEL.mp3",
+            "20 WHEN HE'S GONE.mp3",
+            "21 GREEDY.mp3"
+        ]
     }
 ];
 
