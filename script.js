@@ -43,16 +43,16 @@ const albums = [
             "Drake, The Weeknd - Crew Love.mp3",
             "Drake, Rihanna - Take Care.mp3",
             "Drake - Marvins Room.mp3",
-            "Drake, Kendrick Lamar - Buried Alive Interlude.mp3", 
+            "Drake, Kendrick Lamar - Buried Alive Interlude.mp3", // CHECK bestandsnaam
             "Drake - Under Ground Kings.mp3",
             "Drake, Birdman - We'll Be Fine.mp3",
-            "Drake, Nicki Minaj - Make Me Proud.mp3", 
+            "Drake, Nicki Minaj - Make Me Proud.mp3", // CHECK bestandsnaam
             "Drake, Rick Ross - Lord Knows.mp3",
-            "Drake - Cameras  Good Ones Go Interludes.mp3", 
+            "Drake - Cameras  Good Ones Go Interludes.mp3", // CHECK bestandsnaam
             "Drake - Doing It Wrong.mp3",
-            "Drake, Lil Wayne, André 3000 - The Real Her.mp3", 
+            "Drake, Lil Wayne, André 3000 - The Real Her.mp3", // CHECK bestandsnaam
             "Drake - Look What You've Done.mp3",
-            "Drake, Lil Wayne - HYFR (Hell Ya Fuckin Right).mp3", 
+            "Drake, Lil Wayne - HYFR (Hell Ya Fuckin Right).mp3", // CHECK bestandsnaam
             "Drake - Practice.mp3",
             "Drake - The Ride.mp3"
         ]
@@ -76,7 +76,7 @@ const albums = [
             "Drake, Lil Wayne - Miss Me.mp3",
             "Drake - Cece's Interlude.mp3",
             "Drake - Find Your Love.mp3",
-            "Drake, The-Dream - Shut It Down.mp3", 
+            "Drake, The-Dream - Shut It Down.mp3", // CHECK bestandsnaam
             "Drake - Thank Me Now.mp3",
             "Drake - Best I Ever Had.mp3",
             "Drake - Over.mp3"
@@ -92,8 +92,8 @@ const albums = [
         tracks: [
             "Drake, Future - Digital Dash.mp3",
             "Drake, Future - Big Rings.mp3",
-            "Drake, Future - Live From The Gutter.mp3", 
-            "Drake, Future - Diamonds Dancing.mp3", 
+            "Drake, Future - Live From The Gutter.mp3", // CHECK bestandsnaam
+            "Drake, Future - Diamonds Dancing.mp3", // CHECK bestandsnaam
             "Drake, Future - Scholarships.mp3",
             "Drake, Future - Jumpman.mp3",
             "Drake, Future - Change Locations.mp3",
@@ -133,6 +133,15 @@ const albums = [
             "20 WHEN HE'S GONE.mp3",
             "21 GREEDY.mp3"
         ]
+    },
+    {
+        id: "mycreations",
+        title: "My Creations",
+        artist: "You",
+        mood: "Custom",
+        folder: "",
+        cover: "",
+        tracks: []
     }
 ];
 
@@ -204,11 +213,21 @@ function loadSong(albumIndex, trackIndex) {
     currentAlbum = albumIndex;
     currentTrack = trackIndex;
 
-    const fileName = album.tracks[currentTrack];
+    const track = album.tracks[currentTrack];
 
-    audio.src = album.folder + fileName;
+    let title;
 
-    const title = trackTitle(fileName);
+    if (typeof track === "string") {
+
+        audio.src = album.folder + track;
+        title = trackTitle(track);
+
+    } else {
+
+        audio.src = track.url;
+        title = track.title;
+
+    }
 
     playerTitle.textContent = title;
     playerArtist.textContent = album.artist;
@@ -706,9 +725,11 @@ function searchAlbums(query) {
                 return true;
             }
 
-            return album.tracks.some((fileName) =>
-                trackTitle(fileName).toLowerCase().includes(q)
-            );
+            return album.tracks.some((track) => {
+                const trackName =
+                    typeof track === "string" ? trackTitle(track) : track.title;
+                return trackName.toLowerCase().includes(q);
+            });
 
         });
 }
@@ -722,6 +743,126 @@ searchInput.addEventListener("input", () => {
     renderSidebarAlbums(matches);
 
 });
+
+
+// ===============================
+// MAKE YOUR SONG (Suno-stijl)
+// ===============================
+// Suno zelf heeft geen publieke browser-API, dus hier simuleren we
+// het "genereren" even, waarna je het echte mp3-bestand dat je op
+// suno.com hebt gemaakt kan uploaden. Die komt dan in je eigen
+// album "My Creations" terecht en is direct afspeelbaar.
+
+const generateBtn = document.querySelector("#generateBtn");
+const makeSongResult = document.querySelector("#makeSongResult");
+
+const generatingMessages = [
+    "Componeert melodie...",
+    "Schrijft de lyrics uit...",
+    "Mixt de beat...",
+    "Voegt de laatste finishing touch toe..."
+];
+
+generateBtn.addEventListener("click", () => {
+
+    const title = document.querySelector("#songTitleInput").value.trim();
+    const prompt = document.querySelector("#songPromptInput").value.trim();
+
+    if (!title || !prompt) {
+        makeSongResult.innerHTML =
+            `<p class="upload-zone-warning">Vul minstens een titel en een beschrijving in.</p>`;
+        return;
+    }
+
+    let step = 0;
+
+    makeSongResult.innerHTML = `
+        <div class="generating">
+            <div class="spinner"></div>
+            <p id="generatingText">${generatingMessages[0]}</p>
+        </div>
+    `;
+
+    const generatingText = document.querySelector("#generatingText");
+
+    const interval = setInterval(() => {
+
+        step++;
+
+        if (step < generatingMessages.length) {
+            generatingText.textContent = generatingMessages[step];
+        }
+
+    }, 700);
+
+    setTimeout(() => {
+
+        clearInterval(interval);
+        showUploadZone(title);
+
+    }, 700 * generatingMessages.length);
+
+});
+
+
+function showUploadZone(title) {
+
+    makeSongResult.innerHTML = `
+        <div class="upload-zone">
+            <p>🎧 "${title}" is klaar! Upload hier het mp3-bestand dat je op suno.com hebt gedownload:</p>
+            <input type="file" id="songFileInput" accept="audio/mp3,audio/mpeg">
+
+            <p>Cover afbeelding (optioneel):</p>
+            <input type="file" id="coverFileInput" accept="image/*">
+
+            <button id="addSongBtn" class="add-song-btn" disabled>Voeg toe aan mijn nummers</button>
+        </div>
+    `;
+
+    const songFileInput = document.querySelector("#songFileInput");
+    const coverFileInput = document.querySelector("#coverFileInput");
+    const addSongBtn = document.querySelector("#addSongBtn");
+
+    songFileInput.addEventListener("change", () => {
+        addSongBtn.disabled = !songFileInput.files.length;
+    });
+
+    addSongBtn.addEventListener("click", () => {
+
+        if (!songFileInput.files.length) {
+            return;
+        }
+
+        const audioFile = songFileInput.files[0];
+        const audioUrl = URL.createObjectURL(audioFile);
+
+        const myCreations = albums.find((a) => a.id === "mycreations");
+        const albumIndex = albums.indexOf(myCreations);
+
+        myCreations.tracks.push({
+            title: title,
+            url: audioUrl
+        });
+
+        if (coverFileInput.files.length) {
+            myCreations.cover = URL.createObjectURL(coverFileInput.files[0]);
+        }
+
+        renderAlbumGrid();
+        renderSidebarAlbums();
+
+        loadSong(albumIndex, myCreations.tracks.length - 1);
+        playAudio();
+
+        makeSongResult.innerHTML =
+            `<p class="upload-zone-warning">✅ "${title}" is toegevoegd aan "My Creations" en speelt nu!</p>`;
+
+        document.querySelector("#songTitleInput").value = "";
+        document.querySelector("#songPromptInput").value = "";
+        document.querySelector("#songStyleInput").value = "";
+
+    });
+}
 
 
 // ===============================

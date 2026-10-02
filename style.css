@@ -420,7 +420,135 @@ nav a.active {
     transform: scale(1.15);
 }
 
-/* Recommended (albumkiezer) */
+/* ===============================
+   MAKE YOUR SONG
+================================ */
+
+.make-song {
+    margin: 10px 0 50px;
+}
+
+.make-song-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 26px;
+}
+
+.make-song-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 480px;
+}
+
+.make-song-form label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #9a9aac;
+    margin-top: 10px;
+}
+
+.make-song-form label:first-child {
+    margin-top: 0;
+}
+
+.make-song-form input,
+.make-song-form textarea {
+    background: var(--card-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 14px;
+    color: var(--text);
+    font-size: 13px;
+    outline: none;
+    resize: vertical;
+}
+
+.make-song-form input:focus,
+.make-song-form textarea:focus {
+    border-color: var(--purple);
+}
+
+.generate-btn {
+    margin-top: 18px;
+    align-self: flex-start;
+    background: linear-gradient(135deg, var(--purple), var(--blue));
+    color: white;
+    border-radius: 30px;
+    padding: 12px 24px;
+}
+
+.make-song-result {
+    margin-top: 22px;
+}
+
+.make-song-result:empty {
+    margin-top: 0;
+}
+
+.generating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #b99cff;
+    font-size: 13px;
+}
+
+.generating .spinner {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid rgba(139, 92, 246, 0.25);
+    border-top-color: var(--purple);
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.upload-zone {
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 480px;
+}
+
+.upload-zone p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.upload-zone input[type="file"] {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.add-song-btn {
+    margin-top: 6px;
+    align-self: flex-start;
+    background: var(--purple);
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 12px;
+}
+
+.add-song-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.upload-zone-warning {
+    font-size: 12px;
+    color: #b99cff;
+}
 
 .recommended {
     margin-top: 10px;
