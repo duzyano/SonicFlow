@@ -23,8 +23,10 @@
             </nav>
 
             <div class="sidebar-bottom">
-                <p>YOUR ALBUMS</p>
+                <p>Albums</p>
                 <div class="sidebar-albums"></div>
+                <p class="favorites-heading">Favorites</p>
+                <div class="favorites-list"></div>
             </div>
         </aside>
 
@@ -47,7 +49,7 @@
             <section class="hero">
 
                 <div class="hero-text">
-                    <p class="eyebrow">YOUR PERSONAL MUSIC EXPERIENCE</p>
+                    <p class="eyebrow">Side A</p>
                     <h2>Good evening,<br><span>Duzyano.</span></h2>
                     <p class="description">
                         Discover new sounds and let the music move with you.
@@ -70,10 +72,10 @@
                         <img class="cover-art" src="" alt="Album cover">
 
                         <div class="cover-content">
-                            <span class="cover-label">SONICFLOW</span>
+                            <span class="cover-label">No cover yet</span>
                             <div class="cover-circle"></div>
-                            <h3>NEON<br>DREAMS</h3>
-                            <p>AI MUSIC EXPERIENCE</p>
+                            <h3>Neon<br>Dreams</h3>
+                            <p>Pick an album to start</p>
                         </div>
                     </div>
 
@@ -81,12 +83,17 @@
 
                     <div class="song-info">
                         <div>
-                            <p class="song-label">NOW PLAYING</p>
+                            <p class="song-label">Now playing</p>
                             <h3>Neon Dreams</h3>
                             <p>AI-generated • Night Drive</p>
                         </div>
 
                         <button class="heart">♡</button>
+                    </div>
+
+                    <div class="lyrics-panel">
+                        <p class="lyrics-label">Lyrics</p>
+                        <div id="lyricsText" class="lyrics-text"></div>
                     </div>
 
                 </div>
@@ -97,7 +104,7 @@
 
                 <div class="section-heading">
                     <div>
-                        <p class="eyebrow">POWERED BY YOUR CREATIVITY</p>
+                        <p class="eyebrow">Write it yourself</p>
                         <h2>Make your song</h2>
                     </div>
                 </div>
@@ -109,7 +116,7 @@
                         <label for="songTitleInput">Titel</label>
                         <input type="text" id="songTitleInput" placeholder="Bijv. Neon Nights">
 
-                        <label for="songPromptInput">Beschrijf je nummer (net als op Suno)</label>
+                        <label for="songPromptInput">Beschrijf je nummer (optioneel)</label>
                         <textarea id="songPromptInput" rows="3" placeholder="Bijv. Een chille lofi track over een rustige avond in de stad, met regen en een zachte piano..."></textarea>
 
                         <label for="songStyleInput">Stijl / genre</label>
@@ -128,7 +135,7 @@
             <section class="recommended">
                 <div class="section-heading">
                     <div>
-                        <p class="eyebrow">PICK AN ALBUM</p>
+                        <p class="eyebrow">Side B</p>
                         <h2>Choose your album</h2>
                     </div>
                 </div>
