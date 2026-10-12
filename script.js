@@ -135,6 +135,85 @@ const albums = [
         ]
     },
     {
+        id: "bully",
+        title: "BULLY",
+        artist: "Ye",
+        mood: "Night Drive",
+        folder: "assets/music/BULLY/",
+        cover: "assets/music/BULLY/plaatje6.png",
+        tracks: [
+            "YE - ALL THE LOVE (feat. ANDRÉ TROUTMAN).mp3",
+            "YE - BEAUTY AND THE BEAST.mp3",
+            "YE - BULLY (feat. CEELO GREEN).mp3",
+            "YE - CIRCLES (feat. DON TOLIVER).mp3",
+            "YE - DAMN.mp3",
+            "YE - FATHER (feat. TRAVIS SCOTT).mp3",
+            "YE - HIGHS AND LOWS.mp3",
+            "YE - I CAN’T WAIT.mp3",
+            "YE - KING.mp3",
+            "YE - LAST BREATH (feat. PESO PLUMA).mp3",
+            "YE - MAMA'S FAVORITE.mp3",
+            "YE - PREACHER MAN.mp3",
+            "YE - PUNCH DRUNK.mp3",
+            "YE - SISTERS AND BROTHERS.mp3",
+            "YE - THIS A MUST.mp3",
+            "YE - THIS ONE HERE.mp3",
+            "YE - WHATEVER WORKS.mp3",
+            "YE - WHITE LINES (feat. ANDRÉ TROUTMAN).mp3"
+        ]
+    },
+    {
+        id: "thecollagedropout",
+        title: "The Collage Dropout",
+        artist: "Kanye West",
+        mood: "Chill",
+        folder: "assets/music/TheCollageDropout/",
+        cover: "assets/music/TheCollageDropout/plaatje7.png",
+        tracks: [
+            "All Falls Down.mp3",
+            "Family Business.mp3",
+            "Get Em High.mp3",
+            "Graduation Day.mp3",
+            "I'll Fly Away.mp3",
+            "Intro.mp3",
+            "Jesus Walks.mp3",
+            "Last Call.mp3",
+            "Never Let Me Down.mp3",
+            "School Spirit Skit 1.mp3",
+            "School Spirit.mp3",
+            "Slow Jamz.mp3",
+            "Spaceship.mp3",
+            "The New Workout Plan.mp3",
+            "Two Words.mp3",
+            "We Don't Care.mp3",
+            "Workout Plan(3).mp3"
+        ]
+    },
+    {
+        id: "chromakopia",
+        title: "Chromakopia",
+        artist: "Tyler, The Creator",
+        mood: "Night Drive",
+        folder: "assets/music/Chromakopia/",
+        cover: "assets/music/Chromakopia/plaatj8.png",
+        tracks: [
+            "01. St. Chroma.mp3",
+            "02. Rah Tah Tah.mp3",
+            "03. Noid.mp3",
+            "04. Darling, I.mp3",
+            "05. Hey Jane.mp3",
+            "06. I Killed You.mp3",
+            "07. Judge Judy.mp3",
+            "08. Sticky.mp3",
+            "09. Take Your Mask Off.mp3",
+            "10. Tomorrow.mp3",
+            "11. Thought I Was Dead.mp3",
+            "12. Like Him.mp3",
+            "13. Balloon.mp3",
+            "14. I Hope You Find Your Way Home.mp3"
+        ]
+    },
+    {
         id: "mycreations",
         title: "My Creations",
         artist: "You",
@@ -151,21 +230,7 @@ let currentTrack = 0;
 let isPlaying = false;
 let favoritesFilter = false;
 
-const trackLyrics = {
-    "02 Oh My Dis Side.mp3": "Oh My Dis Side — Travis Scott ft. Quavo\nI've been up for a long time, oh my\nBroad day, I've been poppin' pills, oh my\nPourin' syrup, great day\nStill can't get away, oh my\n\nThis side, this side, this side\nYou really can't make it on this side\nLot of lone stars on this side\nI feel a lot at home on this side.",
-    "Drake, Rihanna - Take Care.mp3": "Take Care — Drake ft. Rihanna\nI know you've been hurt by someone else\nI can tell by the way you carry yourself\nIf you let me, here's what I'll do\nI'll take care of you\n\nYou don't have to be afraid\nWe're gonna make it through the night\nI know you've been on your own\nBut I'll be there for you, girl, every time.",
-    "Drake - Marvins Room.mp3": "Marvin's Room — Drake\nThat ain't workin', that's the way you do it\nI just had to let you know\nI know you got a lot going on\nBut this is where I belong, girl\n\nI know you got a lot on your mind\nBut I'm still thinking 'bout you, girl.",
-    "Drake, The Weeknd - Crew Love.mp3": "Crew Love — Drake ft. The Weeknd\nWe do what we want 'cause we can\nWe can get high if we want to\nI got a lot of things to say\nBut I don't know what to do\n\nWe just keep it low-key, keep it real\nSome nights we ride, some nights we feel.",
-    "Drake - Headlines.mp3": "Headlines — Drake\nI don't really know what to say\nI just gotta put it out there\nPeople talking, people watching\nBut I stay on my grind\n\nWhen the night gets dark, I keep moving\nI got my own lane, I stay focused.",
-    "Drake - Best I Ever Had.mp3": "Best I Ever Had — Drake\nI know I got a lot to say\nBut I don't want to waste your time\nI know you mad, I know you sad\nBut I still think you're the one\n\nYou know I am, I am, I am what I am\nAnd I know you got a lot to say.",
-    "Drake - Over.mp3": "Over — Drake\nI know I got a lot going on\nBut I still keep it moving\nThe road is long, the road is rough\nBut I don't stop, I just keep going\n\nI'm on top and I'm not going down\nI still got that fire in my soul.",
-    "Drake - Find Your Love.mp3": "Find Your Love — Drake\nI know you think that love is fake\nBut I can find your love\nWe can make it through the night\nIf you just stay with me\n\nI know you're scared, but I can help\nJust hold on, don't let go.",
-    "Drake - Show Me A Good Time.mp3": "Show Me A Good Time — Drake\nWe just need a little time\nTo forget the world, forget the pain\nShow me a good time\nAnd I can leave the rest behind\n\nWe can be anywhere, anywhere\nAs long as we keep the lights on.",
-    "Drake, Future - Jumpman.mp3": "Jumpman — Drake & Future\nJumpman, jumpman, jumpman\nI know you're watchin' me\nWe don't stop, we don't slow down\nWe just keep pushing, keep going\n\nJumpman, jumpman, jumpman\nMoney talk, I don't speak much.",
-    "Drake, Future - Big Rings.mp3": "Big Rings — Drake & Future\nBig rings, big rings\nBig money, big life\nI got the whole city on my mind\nI just keep getting bigger\n\nBig rings, big rings\nYeah, that's the life I live.",
-    "Drake - The Ride.mp3": "The Ride — Drake\nI got a lot of love to give\nAnd a lot of pain to hide\nWe keep moving, we keep rising\nEven when the road is wild\n\nI know my heart's still with you\nEven when it feels like it's all gone.",
-    "Drake - Practice.mp3": "Practice — Drake\nI been practicing all my life\nTrying to get it right\nBut I keep learning, I keep moving\nAnd I still ain't done\n\nIt's a long road, but I know\nI'm gonna make it home someday."
-};
+
 
 const savedFavorites = JSON.parse(localStorage.getItem("sonicflow-favorites") || "[]");
 const favorites = Array.isArray(savedFavorites) ? savedFavorites : [];
@@ -196,7 +261,6 @@ const lyricsText = document.querySelector("#lyricsText");
 const canvas = document.getElementById("visualizer");
 const canvasCtx = canvas.getContext("2d");
 
-let lyricsTimer = null;
 let audioContext;
 let analyser;
 let source;
@@ -216,7 +280,8 @@ function trackTitle(fileName) {
     title = title.replace(/^\d+\s+/, "");
  
     // verwijder "Artiest - " of "Artiest, Artiest2 - " ervoor
-    title = title.replace(/^.*?-\s*/, "");
+    // (knip op " - " met spaties, anders gaat het mis bij The-Dream of JAY-Z)
+    title = title.replace(/^.*?\s-\s+/, "");
  
     return title;
 }
@@ -291,88 +356,6 @@ function loadSong(albumIndex, trackIndex) {
     updateFavoriteButton();
     showLyricsForCurrentTrack();
 }
-function getLyricsUrls(folder, fileName) {
-    const cleanFolder = (folder || "").replace(/\\/g, "/");
-    const safeFileName = (fileName || "").replace(/\\/g, "/");
-    const urls = new Set();
-
-    if (cleanFolder && safeFileName) {
-        urls.add(cleanFolder + safeFileName);
-        urls.add(cleanFolder + encodeURIComponent(safeFileName));
-        urls.add(cleanFolder + decodeURIComponent(safeFileName));
-    }
-
-    return [...urls].filter(Boolean);
-}
-
-async function showLyricsForCurrentTrack() {
-    const album = albums[currentAlbum];
-    const track = album?.tracks[currentTrack];
-
-    if (!album || !track || !lyricsText) return;
-
-    const title = typeof track === "string"
-        ? trackTitle(track)
-        : track.title;
-
-    const fileName = typeof track === "string"
-        ? track.replace(/\.mp3$/i, ".txt")
-        : `${track.title}.txt`;
-
-    const folder = album.folder;
-    const lyricUrls = getLyricsUrls(folder, fileName);
-
-    if (lyricsTimer) {
-        clearTimeout(lyricsTimer);
-    }
-
-    lyricsText.textContent = "Lyrics laden...";
-
-    let lastError = null;
-
-    for (const lyricUrl of lyricUrls) {
-        try {
-            const response = await fetch(lyricUrl);
-
-            if (response.ok) {
-                const lyrics = await response.text();
-
-                if (
-                    album !== albums[currentAlbum] ||
-                    track !== album.tracks[currentTrack]
-                ) {
-                    return;
-                }
-
-                if (lyrics.trim()) {
-                    typeLyrics(lyrics);
-                    return;
-                }
-            }
-        } catch (error) {
-            lastError = error;
-            console.error("Lyrics laden mislukt:", error, lyricUrl);
-        }
-    }
-
-    // Terugvallen op lyrics die al in de JavaScript staan.
-    const fallbackKey = typeof track === "string" ? track : "";
-    if (trackLyrics[fallbackKey]) {
-        typeLyrics(trackLyrics[fallbackKey]);
-    } else {
-        const isFileOrigin = window.location.protocol === "file:";
-        const message = isFileOrigin
-            ? "Open de app via een lokale webserver, bv. python -m http.server 8000, om .txt-lyrics te laden."
-            : `Geen lyricsbestand gevonden: ${fileName}`;
-
-        typeLyrics(`${album.title} — ${title}\n\n${message}`);
-    }
-
-    if (lastError && window.location.protocol === "file:") {
-        console.warn("Lyric fetching failed because the app is being opened with file://. Serve it via a local web server.");
-    }
-}
-
  
  
 // ===============================
@@ -980,30 +963,710 @@ favoritesLink.addEventListener("click", (event) => {
     renderSidebarAlbums(getFilteredAlbumIndices());
 });
 
-function typeLyrics(text) {
+// ===============================
+// GESYNCHRONISEERDE LYRICS (Spotify-stijl)
+// ===============================
+// Zoekt assets/lyrics/<bestandsnaam>.lrc (met tijdstempels, exact)
+// of .txt (zonder tijdstempels, dan wordt de timing geschat).
+// De regel die nu gezongen wordt licht op, de rest is gedimd.
+
+let lyricLines = [];      // { text, time, marker }
+let lyricsTimed = false;  // true = echte LRC-tijden, false = geschat
+let activeLyricIndex = -1;
+let lyricsRequestId = 0;
+let currentLyricsKey = "";
+
+function parseLyrics(raw) {
+
+    const lrcRegex = /^\[(\d+):(\d+(?:\.\d+)?)\]\s*(.*)$/;
+    const rows = raw.replace(/\r/g, "").split("\n");
+
+    const lines = [];
+    let foundTimes = 0;
+
+    rows.forEach((row) => {
+
+        const match = row.match(lrcRegex);
+
+        if (match) {
+            foundTimes++;
+            lines.push({
+                text: match[3].trim(),
+                time: Number(match[1]) * 60 + Number(match[2]),
+                marker: false
+            });
+            return;
+        }
+
+        // metadata-regels zoals [ar:Drake] overslaan
+        if (/^\[[a-z]+:.*\]$/i.test(row.trim())) {
+            return;
+        }
+
+        const text = row.trim();
+
+        lines.push({
+            text: text,
+            time: null,
+            marker: /^\[.*\]$/.test(text) // bv. [Chorus]
+        });
+    });
+
+    return { lines: lines, timed: foundTimes > 2 };
+}
+
+
+function estimateLyricTimes(duration) {
+
+    // regels met zingbare tekst (geen lege regels, geen [Chorus]-kopjes)
+    const singable = lyricLines.filter((l) => l.text && !l.marker);
+
+    if (!singable.length || !duration) {
+        return;
+    }
+
+    // zang begint niet direct en stopt iets voor het einde
+    const startAt = duration * 0.12;
+    const endAt = duration * 0.92;
+
+    const weights = singable.map((l) => Math.max(l.text.length, 12));
+    const totalWeight = weights.reduce((sum, w) => sum + w, 0);
+
+    let elapsed = startAt;
+
+    singable.forEach((line, i) => {
+        line.time = elapsed;
+        elapsed += ((endAt - startAt) * weights[i]) / totalWeight;
+    });
+}
+
+
+function renderLyricLines() {
+
+    lyricsText.innerHTML = "";
+    activeLyricIndex = -1;
+
+    lyricLines.forEach((line, index) => {
+
+        if (!line.text) {
+            const spacer = document.createElement("div");
+            spacer.className = "lyric-gap";
+            lyricsText.appendChild(spacer);
+            return;
+        }
+
+        const el = document.createElement("p");
+        el.className = line.marker ? "lyric-marker" : "lyric-line";
+        el.textContent = line.text;
+        el.dataset.index = index;
+
+        if (!line.marker) {
+            el.addEventListener("click", () => {
+                if (!syncMode && line.time !== null && audio.duration) {
+                    audio.currentTime = line.time;
+                }
+            });
+        }
+
+        lyricsText.appendChild(el);
+    });
+
+    lyricsText.scrollTop = 0;
+}
+
+
+function setLyricsMessage(message) {
+    lyricLines = [];
+    lyricsText.innerHTML = "";
+
+    const p = document.createElement("p");
+    p.className = "lyric-empty";
+    p.textContent = message;
+    lyricsText.appendChild(p);
+}
+
+
+function applyLyrics(raw) {
+
+    const parsed = parseLyrics(raw);
+
+    lyricLines = parsed.lines;
+    lyricsTimed = parsed.timed;
+
+    if (!lyricLines.some((l) => l.text)) {
+        setLyricsMessage("Geen lyrics gevonden voor dit nummer.");
+        return;
+    }
+
+    if (!lyricsTimed) {
+        loadSavedSync();
+    }
+
+    if (!lyricsTimed && audio.duration) {
+        estimateLyricTimes(audio.duration);
+    }
+
+    renderLyricLines();
+}
+
+
+function updateActiveLyric() {
+
+    if (!lyricLines.length || syncMode) {
+        return;
+    }
+
+    // schatting kan pas als de duur van het nummer bekend is
+    if (!lyricsTimed && lyricLines.every((l) => l.time === null) && audio.duration) {
+        estimateLyricTimes(audio.duration);
+    }
+
+    const t = audio.currentTime + lyricsOffset;
+    let current = -1;
+
+    for (let i = 0; i < lyricLines.length; i++) {
+        if (lyricLines[i].time !== null && lyricLines[i].time <= t) {
+            current = i;
+        }
+    }
+
+    if (current === activeLyricIndex) {
+        return;
+    }
+
+    activeLyricIndex = current;
+
+    lyricsText.querySelectorAll(".lyric-line").forEach((el) => {
+
+        const i = Number(el.dataset.index);
+
+        el.classList.toggle("active", i === current);
+        el.classList.toggle("sung", i < current);
+    });
+
+    const activeEl = lyricsText.querySelector(".lyric-line.active");
+
+    if (activeEl) {
+
+        // alleen binnen het lyrics-vak scrollen, niet de hele pagina
+        const target =
+            activeEl.offsetTop - lyricsText.clientHeight / 2 + activeEl.clientHeight / 2;
+
+        lyricsText.scrollTo({ top: target, behavior: "smooth" });
+    }
+}
+
+audio.addEventListener("timeupdate", updateActiveLyric);
+audio.addEventListener("seeked", updateActiveLyric);
+audio.addEventListener("loadedmetadata", () => {
+    if (lyricLines.length && !lyricsTimed) {
+        estimateLyricTimes(audio.duration);
+    }
+});
+
+
+// ===============================
+// TAP-SYNC: zelf de timing instellen
+// ===============================
+// Geschatte timing loopt vaak uit de pas. Met Sync speel je het nummer
+// af en druk je op SPATIE precies als een regel begint. De tijden worden
+// opgeslagen in de browser en daarna gebruikt voor dit nummer.
+
+let syncMode = false;
+let syncIndex = 0;
+let syncList = [];
+let syncHint = null;
+let syncButton = null;
+
+function singableLines() {
+    return lyricLines.filter((l) => l.text && !l.marker);
+}
+
+function loadSavedSync() {
+
+    try {
+        const saved = JSON.parse(
+            localStorage.getItem("sonicflow-sync:" + currentLyricsKey) || "null"
+        );
+        const lines = singableLines();
+
+        if (saved && Array.isArray(saved) && saved.length === lines.length) {
+            lines.forEach((line, i) => { line.time = saved[i]; });
+            lyricsTimed = true;
+        }
+    } catch (error) {
+        // kapotte opslag negeren
+    }
+}
+
+function saveSync() {
+
+    const times = singableLines().map((l) => l.time);
+
+    localStorage.setItem(
+        "sonicflow-sync:" + currentLyricsKey,
+        JSON.stringify(times)
+    );
+}
+
+function markSyncPosition() {
+
+    lyricsText.querySelectorAll(".lyric-line").forEach((el) => {
+        el.classList.remove("active", "sync-next");
+    });
+
+    const line = syncList[syncIndex];
+
+    if (!line) {
+        return;
+    }
+
+    const el = lyricsText.querySelector(
+        `.lyric-line[data-index="${lyricLines.indexOf(line)}"]`
+    );
+
+    if (el) {
+        el.classList.add("sync-next");
+
+        lyricsText.scrollTo({
+            top: el.offsetTop - lyricsText.clientHeight / 2 + el.clientHeight / 2,
+            behavior: "smooth"
+        });
+    }
+}
+
+function startSync() {
+
+    if (!singableLines().length) {
+        return;
+    }
+
+    syncList = singableLines();
+    syncList.forEach((l) => { l.time = null; });
+
+    lyricsTimed = true;
+    syncMode = true;
+    syncIndex = 0;
+
+    audio.currentTime = 0;
+    playAudio();
+
+    syncButton.textContent = "Stop sync";
+    syncHint.textContent =
+        "Druk op SPATIE als de gemarkeerde regel begint. Backspace = terug, Esc = stoppen.";
+
+    markSyncPosition();
+}
+
+function stopSync(reload) {
+
+    syncMode = false;
+    syncButton.textContent = "Sync";
+    syncHint.textContent = "";
+
+    if (reload) {
+        showLyricsForCurrentTrack();
+    }
+}
+
+function tapSync() {
+
+    if (!syncMode || syncIndex >= syncList.length) {
+        return;
+    }
+
+    syncList[syncIndex].time = audio.currentTime;
+    syncIndex++;
+
+    if (syncIndex >= syncList.length) {
+        saveSync();
+        stopSync(false);
+        syncHint.textContent = "Sync opgeslagen voor dit nummer.";
+        activeLyricIndex = -1;
+        updateActiveLyric();
+        return;
+    }
+
+    markSyncPosition();
+}
+
+function undoSync() {
+
+    if (!syncMode || syncIndex === 0) {
+        return;
+    }
+
+    syncIndex--;
+    syncList[syncIndex].time = null;
+    markSyncPosition();
+}
+
+function resetSync() {
+
+    localStorage.removeItem("sonicflow-sync:" + currentLyricsKey);
+    stopSync(true);
+}
+
+function updateOffsetHint() {
+
+    if (!syncHint || syncMode) {
+        return;
+    }
+
+    syncHint.textContent = lyricsOffset
+        ? `Timing ${lyricsOffset > 0 ? "+" : ""}${lyricsOffset.toFixed(1)}s`
+        : "";
+}
+
+function nudgeLyrics(seconds) {
+
+    lyricsOffset = Math.round((lyricsOffset + seconds) * 10) / 10;
+
+    localStorage.setItem(
+        "sonicflow-offset:" + currentLyricsKey,
+        String(lyricsOffset)
+    );
+
+    updateOffsetHint();
+    activeLyricIndex = -1;
+    updateActiveLyric();
+}
+
+function buildSyncTools() {
+
+    const panel = document.querySelector(".lyrics-panel");
+
+    if (!panel || panel.querySelector(".lyrics-tools")) {
+        return;
+    }
+
+    const tools = document.createElement("div");
+    tools.className = "lyrics-tools";
+
+    syncButton = document.createElement("button");
+    syncButton.type = "button";
+    syncButton.textContent = "Sync";
+
+    const resetButton = document.createElement("button");
+    resetButton.type = "button";
+    resetButton.textContent = "Reset";
+
+    const earlierButton = document.createElement("button");
+    earlierButton.type = "button";
+    earlierButton.textContent = "Eerder";
+    earlierButton.title = "Regels 0,5 seconde eerder tonen";
+    earlierButton.addEventListener("click", () => nudgeLyrics(0.5));
+
+    const laterButton = document.createElement("button");
+    laterButton.type = "button";
+    laterButton.textContent = "Later";
+    laterButton.title = "Regels 0,5 seconde later tonen";
+    laterButton.addEventListener("click", () => nudgeLyrics(-0.5));
+
+    syncHint = document.createElement("span");
+    syncHint.className = "lyrics-hint";
+
+    syncButton.addEventListener("click", () => {
+        if (syncMode) {
+            stopSync(true);
+        } else {
+            startSync();
+        }
+    });
+
+    resetButton.addEventListener("click", resetSync);
+
+    tools.append(earlierButton, laterButton, syncButton, resetButton, syncHint);
+    panel.appendChild(tools);
+}
+
+buildSyncTools();
+
+document.addEventListener("keydown", (event) => {
+
+    if (!syncMode) {
+        return;
+    }
+
+    const tag = event.target.tagName;
+
+    if (tag === "INPUT" || tag === "TEXTAREA") {
+        return;
+    }
+
+    if (event.code === "Space") {
+        event.preventDefault();
+        tapSync();
+    } else if (event.code === "Backspace") {
+        event.preventDefault();
+        undoSync();
+    } else if (event.code === "Escape") {
+        stopSync(true);
+    }
+});
+
+
+async function fetchLyricsFile(folder, base) {
+
+    const name = encodeURIComponent(base);
+
+    // naast de mp3 in dezelfde albummap
+    const places = [folder];
+
+    for (const place of places) {
+
+        for (const ext of ["lrc", "txt"]) {
+
+            try {
+                const response = await fetch(`${place}${name}.${ext}`);
+
+                if (response.ok) {
+                    return { text: await response.text(), ext: ext };
+                }
+            } catch (error) {
+                // niet gevonden, volgende proberen
+            }
+        }
+    }
+
+    return null;
+}
+
+
+// ===============================
+// AUTOMATISCHE SYNC via LRCLIB (gratis lyrics-database met tijden)
+// ===============================
+// Zoekt op artiest + titel + duur. Levert LRC met tijdstempels, dus
+// de regels lichten vanzelf op zonder dat jij iets hoeft te doen.
+
+let lyricsOffset = 0; // seconden; + = regels eerder tonen
+
+function waitForDuration(ms) {
+
+    return new Promise((resolve) => {
+
+        if (Number.isFinite(audio.duration) && audio.duration > 0) {
+            resolve(audio.duration);
+            return;
+        }
+
+        const done = () => {
+            audio.removeEventListener("loadedmetadata", done);
+            clearTimeout(timer);
+            resolve(Number.isFinite(audio.duration) ? audio.duration : 0);
+        };
+
+        const timer = setTimeout(done, ms);
+        audio.addEventListener("loadedmetadata", done);
+    });
+}
+
+
+function guessArtistAndTitle(album, fileName) {
+
+    const base = fileName.replace(/\.mp3$/i, "");
+    let artist = album.artist;
+
+    // "Drake, Future - Big Rings" -> eerste artiest = Drake
+    const dash = base.match(/^(?!\d+\s)(.+?)\s-\s(.+)$/);
+
+    if (dash) {
+        artist = dash[1].split(",")[0].trim();
+    }
+
+    if (/various|you/i.test(artist)) {
+        artist = "";
+    }
+
+    return { artist: artist, title: trackTitle(fileName) };
+}
+
+
+async function fetchOnlineLyrics(album, fileName) {
+
+    const cacheKey = "sonicflow-lrclib2:" + currentLyricsKey;
+
+    try {
+        const cached = JSON.parse(localStorage.getItem(cacheKey) || "null");
+
+        // gevonden lyrics blijven bewaard, "niet gevonden" 1 dag
+        if (cached && (!cached.none || Date.now() - cached.at < 86400000)) {
+            return cached.none ? null : cached;
+        }
+    } catch (error) {
+        // kapotte cache negeren
+    }
+
+    const { artist, title } = guessArtistAndTitle(album, fileName);
+    const duration = await waitForDuration(2500);
+
+    let record = null;
+
+    try {
+
+        // 1. exacte zoekopdracht
+        if (artist && duration) {
+
+            const params = new URLSearchParams({
+                artist_name: artist,
+                track_name: title,
+                album_name: album.title,
+                duration: String(Math.round(duration))
+            });
+
+            const response = await fetch(`https://lrclib.net/api/get?${params}`);
+
+            if (response.ok) {
+                record = await response.json();
+            }
+        }
+
+        // 2. ruimere zoekopdracht, kies resultaat met de meest gelijke duur
+        if (!record || !(record.syncedLyrics || record.plainLyrics)) {
+
+            const params = new URLSearchParams({ track_name: title });
+
+            if (artist) {
+                params.set("artist_name", artist);
+            }
+
+            const response = await fetch(`https://lrclib.net/api/search?${params}`);
+
+            let results = [];
+
+            if (response.ok) {
+                results = (await response.json()).filter(
+                    (r) => r.syncedLyrics || r.plainLyrics
+                );
+            }
+
+            // niks gevonden? zoek vrij op "artiest titel" (zonder haakjes)
+            if (!results.length) {
+
+                const cleanTitle = title.replace(/\(.*?\)|\[.*?\]/g, "").trim();
+                const loose = new URLSearchParams({ q: `${artist} ${cleanTitle}`.trim() });
+                const looseResponse = await fetch(`https://lrclib.net/api/search?${loose}`);
+
+                if (looseResponse.ok) {
+                    results = (await looseResponse.json()).filter(
+                        (r) => r.syncedLyrics || r.plainLyrics
+                    );
+                }
+            }
+
+            {
+
+                results.sort((x, y) => {
+                    const sx = x.syncedLyrics ? 0 : 1000;
+                    const sy = y.syncedLyrics ? 0 : 1000;
+                    return (sx + Math.abs((x.duration || 0) - duration)) -
+                           (sy + Math.abs((y.duration || 0) - duration));
+                });
+
+                record = results[0] || null;
+            }
+        }
+
+    } catch (error) {
+        return null; // offline of geblokkeerd: niet cachen
+    }
+
+    const found = record && (record.syncedLyrics || record.plainLyrics)
+        ? { synced: record.syncedLyrics || "", plain: record.plainLyrics || "", at: Date.now() }
+        : { none: true, at: Date.now() };
+
+    try {
+        localStorage.setItem(cacheKey, JSON.stringify(found));
+    } catch (error) {
+        // opslag vol, niet erg
+    }
+
+    return found.none ? null : found;
+}
+
+
+async function showLyricsForCurrentTrack() {
+
     if (!lyricsText) {
         return;
     }
 
-    if (lyricsTimer) {
-        clearTimeout(lyricsTimer);
+    const album = albums[currentAlbum];
+    const track = album?.tracks[currentTrack];
+
+    if (!track) {
+        return;
     }
 
-    lyricsText.textContent = "";
-    let index = 0;
+    const requestId = ++lyricsRequestId;
 
-    const tick = () => {
-        lyricsText.textContent = text.slice(0, index);
-        index += 1;
+    currentLyricsKey = typeof track === "string"
+        ? album.folder + track
+        : "creation:" + track.title;
 
-        if (index <= text.length) {
-            lyricsTimer = setTimeout(tick, 18);
-        }
-    };
+    lyricsOffset = Number(localStorage.getItem("sonicflow-offset:" + currentLyricsKey) || 0);
+    updateOffsetHint();
 
-    tick();
+    if (syncMode) {
+        stopSync(false);
+    }
+
+    // eigen gegenereerde nummers hebben hun lyrics al bij zich
+    if (typeof track !== "string") {
+        applyLyrics(track.lyrics || "");
+        return;
+    }
+
+    setLyricsMessage("Lyrics laden...");
+
+    const base = track.replace(/\.mp3$/i, "");
+    const local = await fetchLyricsFile(album.folder, base);
+
+    if (requestId !== lyricsRequestId) {
+        return;
+    }
+
+    // 1. eigen .lrc-bestand met tijden wint altijd
+    if (local && local.ext === "lrc") {
+        applyLyrics(local.text);
+        return;
+    }
+
+    // 2. zelf gesynced met de Sync-knop? Dan gebruiken we jouw tijden
+    const hasManualSync =
+        localStorage.getItem("sonicflow-sync:" + currentLyricsKey) !== null;
+
+    if (local && hasManualSync) {
+        applyLyrics(local.text);
+        return;
+    }
+
+    // 3. automatisch gesynchroniseerde lyrics van LRCLIB
+    const online = await fetchOnlineLyrics(album, track);
+
+    if (requestId !== lyricsRequestId) {
+        return;
+    }
+
+    if (online && online.synced) {
+        applyLyrics(online.synced);
+        return;
+    }
+
+    // 4. jouw eigen tekstbestand (timing geschat)
+    if (local) {
+        applyLyrics(local.text);
+        return;
+    }
+
+    // 5. online tekst zonder tijden (timing geschat)
+    if (online && online.plain) {
+        applyLyrics(online.plain);
+        return;
+    }
+
+    setLyricsMessage("Geen lyrics gevonden voor dit nummer.");
 }
-
 
 
 // ===============================
